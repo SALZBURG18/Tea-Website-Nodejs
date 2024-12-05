@@ -1,5 +1,5 @@
-import express from 'express';
-import path from 'path';
+const express    = require("express");
+const path       = require('path');
 
 const app  = express();
 const port = 9000;
@@ -11,11 +11,11 @@ const port = 9000;
 // });
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Route to handle requests to the root URL
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Start server
